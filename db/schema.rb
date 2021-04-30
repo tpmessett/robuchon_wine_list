@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_30_143957) do
+ActiveRecord::Schema.define(version: 2021_04_30_215758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,19 @@ ActiveRecord::Schema.define(version: 2021_04_30_143957) do
     t.string "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "vineyard"
+    t.text "description"
+    t.boolean "organic"
+    t.boolean "biodynamic"
+    t.string "serving_temperature"
+    t.float "price"
+    t.string "guard"
+    t.string "weight"
+    t.string "region"
+    t.string "product_information", default: [], array: true
+    t.string "food_pairings", default: [], array: true
+    t.string "tasting_notes", default: [], array: true
+    t.string "allergens", default: [], array: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
