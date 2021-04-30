@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+# To support QR code creation
+gem 'rqrcode'
 # for storing images of wine types
 gem 'cloudinary', '~> 1.16.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
