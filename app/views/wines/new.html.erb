@@ -1,0 +1,21 @@
+<h3>Add a new wine:</h3>
+<%= simple_form_for(@wine) do |f| %>
+<%= f.input :name, label: 'Wine Name'%>
+<%= f.input :wine_type, label: 'Wine Type'%>
+<%= f.input :vineyard, label: 'Vineyard'%>
+<%= f.input :description, label: 'Wine description'%>
+<%= f.input :serving_temperature, label: 'Serving Temperature'%>
+<%= f.input :price, as: :float, label: 'Price'%>
+<%= f.input :guard, label: 'Guard'%>
+<%= f.input :weight, label: 'Weight'%>
+<%= f.input :region, label: 'Region'%>
+<%= f.input :product_information, as: :array %>
+<%= f.input :food_pairings, as: :array %>
+<%= f.input :tasting_notes, as: :array %>
+<%= f.input :allergens, as: :array %>
+<%= f.input :organic %>
+<%= f.input :biodynamic %>
+<div class="form-submit btn btn-outline-primary">
+    <%= f.button :submit, "Create" %>
+  </div>
+<%end%>

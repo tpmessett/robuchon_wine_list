@@ -1,0 +1,7 @@
+<div class="container">
+<% @wines.each do |wine| %>
+  <%= link_to wine_path(wine) do %>
+    <p><%= wine.name %></p>
+  <% end %>
+<% end %>
+</div>
