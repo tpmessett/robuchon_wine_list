@@ -10,15 +10,30 @@
     <%= f.input :guard, label: 'Guard'%>
     <%= f.input :weight, label: 'Weight'%>
     <%= f.input :region, label: 'Region'%>
-    <div class="d-flex align-items-center">
+    <div class="array-inputs d-flex align-items-center">
       <%= f.input :product_information, as: :array, input_html: { class: 'form-control' } %>
-      <div class='btn btn-outline-primary' id='product-info-button'>
+      <div class='plus-btn btn btn-outline-primary' id='product-info-button'>
         <i class="fas fa-plus"></i>
       </div>
     </div>
-    <%= f.input :food_pairings, as: :array, input_html: { class: 'form-control' } %>
-    <%= f.input :tasting_notes, as: :array, input_html: { class: 'form-control' } %>
-    <%= f.input :allergens, as: :array, input_html: { class: 'form-control' } %>
+    <div class="array-inputs d-flex align-items-center">
+      <%= f.input :food_pairings, as: :array, input_html: { class: 'form-control' } %>
+      <div class='plus-btn btn btn-outline-primary' id='food-pairings-info-button'>
+        <i class="fas fa-plus"></i>
+      </div>
+    </div>
+    <div class="array-inputs d-flex align-items-center">
+      <%= f.input :tasting_notes, as: :array, input_html: { class: 'form-control' } %>
+      <div class='plus-btn btn btn-outline-primary' id='tasting-notes-info-button'>
+        <i class="fas fa-plus"></i>
+      </div>
+    </div>
+    <div class="array-inputs d-flex align-items-center">
+      <%= f.input :allergens, as: :array, input_html: { class: 'form-control' } %>
+      <div class='plus-btn btn btn-outline-primary' id='allergens-info-button'>
+        <i class="fas fa-plus"></i>
+      </div>
+    </div>
     <%= f.input :organic %>
     <%= f.input :biodynamic %>
     <div class="form-submit btn btn-outline-primary">
