@@ -1,12 +1,22 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.0));
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-nav {
+  flex-direction: row !important;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+#navbarSupportedContent {
+
+  li {
+    padding: 0 4px;
+    display:inline;
+  }
+}
+
+
