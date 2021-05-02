@@ -1,4 +1,6 @@
 class WinesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
+
   def index
     @wines = Wine.all
   end
@@ -19,10 +21,11 @@ class WinesController < ApplicationController
 
   def create
     @wine = Wine.new(wine_params)
+
     if @wine.save
       redirect_to wine_path(@wine)
     else
-      raise
+
       render :new
     end
   end

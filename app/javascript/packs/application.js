@@ -26,10 +26,17 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+import { duplicateProductInfo } from '../components/duplicateFields';
+import { duplicateFoodPairingsInfo } from '../components/duplicateFields';
+import { tastingNotesInfo } from '../components/duplicateFields';
+import { allergensInfo } from '../components/duplicateFields';
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
+  if (document.getElementById("food-pairings-info-button")) {
+    duplicateProductInfo()
+    allergensInfo()
+    tastingNotesInfo()
+    duplicateFoodPairingsInfo()
+  }
 });
 
