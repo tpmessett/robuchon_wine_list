@@ -3,6 +3,12 @@ class WinesController < ApplicationController
 
   def index
     @wines = Wine.all
+    @white_wines = @wines.select {|wine| wine[:wine_type].downcase == "white"}
+    @red_wines = @wines.select {|wine| wine[:wine_type].downcase == "red"}
+    @champagne = @wines.select {|wine| wine[:wine_type].downcase == "champagne"}
+    @rose = @wines.select {|wine| wine[:wine_type].downcase == "rose"}
+    @prosecco = @wines.select {|wine| wine[:wine_type].downcase == "prosecco"}
+    @sparkling = @wines.select {|wine| wine[:wine_type].downcase == "sparkling"}
   end
 
   def show
@@ -37,7 +43,7 @@ class WinesController < ApplicationController
   end
 
   def update
-    @wine = Wine.find(params[:id])
+    @wine = Wine.friendly.find(params[:id])
     @wine.update(wine_params)
     redirect_to wine_path(@wine)
   end

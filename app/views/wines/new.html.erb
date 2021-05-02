@@ -5,7 +5,7 @@
   <%= simple_form_for(@wine) do |f| %>
     <div class="half-container d-flex justify-content-between">
       <%= f.input :name, label: 'Wine Name' %>
-      <%= f.input :wine_type, label: 'Wine Type' %>
+      <%= f.input :wine_type, as: :select, collection: ["Red", "White", "Rose", "Sparkling", "Champagne", "Prosecco"], prompt: 'Select Type',label: 'Wine Type' %>
     </div>
     <div class="half-container d-flex justify-content-between">
       <%= f.input :vineyard, label: 'Vineyard' %>
@@ -54,6 +54,7 @@
     </div>
     <%= f.input :organic %>
     <%= f.input :biodynamic %>
+    <%= f.input :photo, as: :file %>
     <div class="form-submit btn btn-outline-primary">
       <%= f.button :submit, "Create" %>
     </div>

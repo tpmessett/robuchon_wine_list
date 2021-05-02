@@ -1,0 +1,62 @@
+<div class="header new-form-header">
+  <h3>Editing <%= @wine.name %>:</h3>
+</div>
+<div class="container">
+  <%= simple_form_for(@wine) do |f| %>
+    <div class="half-container d-flex justify-content-between">
+      <%= f.input :name, label: 'Wine Name' %>
+      <%= f.input :wine_type, as: :select, collection: ["Red", "White", "Rose", "Sparkling", "Champagne", "Prosecco"], prompt: 'Select Type',label: 'Wine Type' %>
+    </div>
+    <div class="half-container d-flex justify-content-between">
+      <%= f.input :vineyard, label: 'Vineyard' %>
+      <%= f.input :region, label: 'Region'%>
+    </div>
+    <div class="half-container d-flex justify-content-between">
+      <%= f.input :serving_temperature, label: 'Serving Temperature'%>
+      <%= f.input :price, as: :float, label: 'Price'%>
+    </div>
+    <div class="half-container d-flex justify-content-between">
+      <%= f.input :guard, label: 'Guard'%>
+      <%= f.input :weight, label: 'Weight'%>
+    </div>
+    <%= f.input :description, label: 'Wine description'%>
+    <div class="multi-input-wrap" id="product-info-div">
+      <div class="array-inputs d-flex align-items-center">
+        <%= f.input :product_information, as: :array, input_html: { class: 'form-control' } %>
+        <div class='plus-btn btn btn-outline-primary' id='product-info-button'>
+          <i class="fas fa-plus"></i>
+        </div>
+      </div>
+    </div>
+    <div class="multi-input-wrap" id="food-pairings-info-div">
+      <div class="array-inputs d-flex align-items-center">
+        <%= f.input :food_pairings, as: :array, input_html: { class: 'form-control' } %>
+        <div class='plus-btn btn btn-outline-primary' id='food-pairings-info-button'>
+          <i class="fas fa-plus"></i>
+        </div>
+      </div>
+    </div>
+    <div class="multi-input-wrap" id="tasting-notes-info-div">
+      <div class="array-inputs d-flex align-items-center">
+        <%= f.input :tasting_notes, as: :array, input_html: { class: 'form-control' } %>
+        <div class='plus-btn btn btn-outline-primary' id='tasting-notes-info-button'>
+          <i class="fas fa-plus"></i>
+        </div>
+      </div>
+    </div>
+    <div class="multi-input-wrap" id="allergens-info-div">
+      <div class="array-inputs d-flex align-items-center">
+        <%= f.input :allergens, as: :array, input_html: { class: 'form-control' } %>
+        <div class='plus-btn btn btn-outline-primary' id='allergens-info-button'>
+          <i class="fas fa-plus"></i>
+        </div>
+      </div>
+    </div>
+    <%= f.input :organic %>
+    <%= f.input :biodynamic %>
+    <%= f.input :photo, as: :file %>
+    <div class="form-submit btn btn-outline-primary">
+      <%= f.button :submit, "Update" %>
+    </div>
+  <%end%>
+</div>

@@ -1,7 +1,228 @@
+<div class="header index-header d-flex flex-column">
+  <h3>Browse Our Wines</h3>
+  <% if user_signed_in? %>
+    <%= link_to new_wine_path do %>
+      <div class="btn btn-outline-primary">
+        Create New Wine
+      </div>
+    <% end %>
+  <% end %>
+</div>
 <div class="container">
-<% @wines.each do |wine| %>
-  <%= link_to wine_path(wine) do %>
-    <p><%= wine.name %></p>
+<% if @red_wines.length > 0 %>
+  <h3 class="wine-header">Reds</h3>
+  <% @red_wines.each do |wine| %>
+    <% if wine.wine_type.downcase == "red" %>
+      <div class="wine-summary">
+        <div class="d-flex justify-content-between">
+          <%= link_to wine_path(wine) do %>
+            <H5><%= wine.name %> - <%= wine.wine_type %></H5>
+          <% end %>
+          <h5>£<%= number_with_precision(wine.price, precision: 2) %></h5>
+        </div>
+        <div class="wine-links d-flex justify-content-between">
+          <div>
+            <p><%= wine.vineyard %> - <%= wine.region %></p>
+            <p><%= truncate(wine.description, length: 40) %></p>
+          </div>
+          <div>
+            <%= link_to "View Details", wine_path(wine), class: "btn btn-outline-primary" %>
+            <% if user_signed_in? %>
+              <%= link_to edit_wine_path(wine.id) do %>
+                <div class="btn btn-outline-primary">
+                  <i class="far fa-edit"></i>
+                </div>
+              <% end %>
+              <%= link_to wine_path(wine.id), method: :delete do %>
+                <div class="btn btn-outline-primary">
+                  <i class="far fa-trash-alt"></i>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+<% if @white_wines.length > 0 %>
+  <h3 class="wine-header">Whites</h3>
+  <% @white_wines.each do |wine| %>
+    <% if wine.wine_type.downcase == "white" %>
+      <div class="wine-summary">
+        <div class="d-flex justify-content-between">
+          <%= link_to wine_path(wine) do %>
+            <H5><%= wine.name %> - <%= wine.wine_type %></H5>
+          <% end %>
+          <h5>£<%= number_with_precision(wine.price, precision: 2) %></h5>
+        </div>
+        <div class="wine-links d-flex justify-content-between">
+          <div>
+            <p><%= wine.vineyard %> - <%= wine.region %></p>
+            <p><%= truncate(wine.description, length: 40) %></p>
+          </div>
+          <div>
+            <%= link_to "View Details", wine_path(wine), class: "btn btn-outline-primary" %>
+            <% if user_signed_in? %>
+              <%= link_to edit_wine_path(wine.id) do %>
+                <div class="btn btn-outline-primary">
+                  <i class="far fa-edit"></i>
+                </div>
+              <% end %>
+              <%= link_to wine_path(wine.id), method: :delete do %>
+                <div class="btn btn-outline-primary">
+                  <i class="far fa-trash-alt"></i>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+<% if @rose.length > 0 %>
+  <h3 class="wine-header">Rose</h3>
+  <% @rose.each do |wine| %>
+    <% if wine.wine_type.downcase == "rose" %>
+      <div class="wine-summary">
+        <div class="d-flex justify-content-between">
+          <%= link_to wine_path(wine) do %>
+            <H5><%= wine.name %> - <%= wine.wine_type %></H5>
+          <% end %>
+          <h5>£<%= number_with_precision(wine.price, precision: 2) %></h5>
+        </div>
+        <div class="wine-links d-flex justify-content-between">
+          <div>
+            <p><%= wine.vineyard %> - <%= wine.region %></p>
+            <p><%= truncate(wine.description, length: 40) %></p>
+          </div>
+          <div>
+            <%= link_to "View Details", wine_path(wine), class: "btn btn-outline-primary" %>
+            <% if user_signed_in? %>
+              <%= link_to edit_wine_path(wine.id) do %>
+                <div class="btn btn-outline-primary">
+                  <i class="far fa-edit"></i>
+                </div>
+              <% end %>
+              <%= link_to wine_path(wine.id), method: :delete do %>
+                <div class="btn btn-outline-primary">
+                  <i class="far fa-trash-alt"></i>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+<% if @champagne.length > 0 %>
+  <h3 class="wine-header">Champagne</h3>
+  <% @champagne.each do |wine| %>
+    <% if wine.wine_type.downcase == "champagne" %>
+      <div class="wine-summary">
+        <div class="d-flex justify-content-between">
+          <%= link_to wine_path(wine) do %>
+            <H5><%= wine.name %> - <%= wine.wine_type %></H5>
+          <% end %>
+          <h5>£<%= number_with_precision(wine.price, precision: 2) %></h5>
+        </div>
+        <div class="wine-links d-flex justify-content-between">
+          <div>
+            <p><%= wine.vineyard %> - <%= wine.region %></p>
+            <p><%= truncate(wine.description, length: 40) %></p>
+          </div>
+          <div>
+            <%= link_to "View Details", wine_path(wine), class: "btn btn-outline-primary" %>
+            <% if user_signed_in? %>
+              <%= link_to edit_wine_path(wine.id) do %>
+                <div class="btn btn-outline-primary">
+                  <i class="far fa-edit"></i>
+                </div>
+              <% end %>
+              <%= link_to wine_path(wine.id), method: :delete do %>
+                <div class="btn btn-outline-primary">
+                  <i class="far fa-trash-alt"></i>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+<% if @prosecco.length > 0 %>
+  <h3 class="wine-header">Prosecco</h3>
+  <% @prosecco.each do |wine| %>
+    <% if wine.wine_type.downcase == "prosecco" %>
+      <div class="wine-summary">
+        <div class="d-flex justify-content-between">
+          <%= link_to wine_path(wine) do %>
+            <H5><%= wine.name %> - <%= wine.wine_type %></H5>
+          <% end %>
+          <h5>£<%= number_with_precision(wine.price, precision: 2) %></h5>
+        </div>
+        <div class="wine-links d-flex justify-content-between">
+          <div>
+            <p><%= wine.vineyard %> - <%= wine.region %></p>
+            <p><%= truncate(wine.description, length: 40) %></p>
+          </div>
+          <div>
+            <%= link_to "View Details", wine_path(wine), class: "btn btn-outline-primary" %>
+            <% if user_signed_in? %>
+              <%= link_to edit_wine_path(wine.id) do %>
+                <div class="btn btn-outline-primary">
+                  <i class="far fa-edit"></i>
+                </div>
+              <% end %>
+              <%= link_to wine_path(wine.id), method: :delete do %>
+                <div class="btn btn-outline-primary">
+                  <i class="far fa-trash-alt"></i>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+<% if @sparkling.length > 0 %>
+  <h3 class="wine-header">Other Sparkling</h3>
+  <% @sparkling.each do |wine| %>
+    <% if wine.wine_type.downcase == "sparkling" %>
+      <div class="wine-summary">
+        <div class="d-flex justify-content-between">
+          <%= link_to wine_path(wine) do %>
+            <H5><%= wine.name %> - <%= wine.wine_type %></H5>
+          <% end %>
+          <h5>£<%= number_with_precision(wine.price, precision: 2) %></h5>
+        </div>
+        <div class="wine-links d-flex justify-content-between">
+          <div>
+            <p><%= wine.vineyard %> - <%= wine.region %></p>
+            <p><%= truncate(wine.description, length: 40) %></p>
+          </div>
+          <div>
+            <%= link_to "View Details", wine_path(wine), class: "btn btn-outline-primary" %>
+            <% if user_signed_in? %>
+              <%= link_to edit_wine_path(wine.id) do %>
+                <div class="btn btn-outline-primary">
+                  <i class="far fa-edit"></i>
+                </div>
+              <% end %>
+              <%= link_to wine_path(wine.id), method: :delete do %>
+                <div class="btn btn-outline-primary">
+                  <i class="far fa-trash-alt"></i>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 <% end %>
 </div>
