@@ -4,7 +4,6 @@ const duplicateProductInfo = () => {
   const div = document.getElementById("product-info-div")
 
   button.addEventListener("click", () => {
-    console.log('click')
     let fieldTwo = field.cloneNode(true);
     div.appendChild(fieldTwo)
   })
@@ -16,7 +15,6 @@ const duplicateFoodPairingsInfo = () => {
   const div = document.getElementById("food-pairings-info-div")
 
   button.addEventListener("click", () => {
-    console.log('click')
     let fieldTwo = field.cloneNode(true);
     div.appendChild(fieldTwo)
   })
@@ -28,7 +26,6 @@ const tastingNotesInfo = () => {
   const div = document.getElementById("tasting-notes-info-div")
 
   button.addEventListener("click", () => {
-    console.log('click')
     let fieldTwo = field.cloneNode(true);
     div.appendChild(fieldTwo)
   })
@@ -40,7 +37,6 @@ const allergensInfo = () => {
   const div = document.getElementById("allergens-info-div")
 
   button.addEventListener("click", () => {
-    console.log('click')
     let fieldTwo = field.cloneNode(true);
     div.appendChild(fieldTwo)
   })

@@ -55,6 +55,15 @@
   }
 }
 
+.half-container {
+  width: 100%;
+}
+
+.wine_name, .wine_wine_type, .wine_vineyard, .wine_serving_temperature, .wine_price, .wine_guard, .wine_weight, .wine_region {
+  width: 48%;
+}
+
+
 @media (max-width: 768px) {
   .main-form {
     width: 85%;
