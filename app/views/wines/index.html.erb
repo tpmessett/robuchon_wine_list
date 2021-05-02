@@ -6,9 +6,17 @@
         Create New Wine
       </div>
     <% end %>
+  <% else %>
+    <%= link_to "/" do %>
+      <div class="btn btn-outline-primary">
+        Search
+      </div>
+    <% end %>
   <% end %>
 </div>
+
 <div class="container">
+<div id="red"></div>
 <% if @red_wines.length > 0 %>
   <h3 class="wine-header">Reds</h3>
   <% @red_wines.each do |wine| %>
@@ -45,6 +53,7 @@
     <% end %>
   <% end %>
 <% end %>
+<div id="white"></div>
 <% if @white_wines.length > 0 %>
   <h3 class="wine-header">Whites</h3>
   <% @white_wines.each do |wine| %>
@@ -81,6 +90,7 @@
     <% end %>
   <% end %>
 <% end %>
+<div id="rose"></div>
 <% if @rose.length > 0 %>
   <h3 class="wine-header">Rose</h3>
   <% @rose.each do |wine| %>
@@ -117,6 +127,7 @@
     <% end %>
   <% end %>
 <% end %>
+<div id="champagne"></div>
 <% if @champagne.length > 0 %>
   <h3 class="wine-header">Champagne</h3>
   <% @champagne.each do |wine| %>
@@ -153,6 +164,7 @@
     <% end %>
   <% end %>
 <% end %>
+<div id="prosecco"></div>
 <% if @prosecco.length > 0 %>
   <h3 class="wine-header">Prosecco</h3>
   <% @prosecco.each do |wine| %>
@@ -189,6 +201,7 @@
     <% end %>
   <% end %>
 <% end %>
+<div id="sparkling"></div>
 <% if @sparkling.length > 0 %>
   <h3 class="wine-header">Other Sparkling</h3>
   <% @sparkling.each do |wine| %>

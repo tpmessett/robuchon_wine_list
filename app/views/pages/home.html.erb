@@ -1,4 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= cl_image_tag("m9okcgdvyf4ld94wunxavmvmvt87",
-      width: 400, height: 300, crop: :fill) %>
+<div class="header index-header d-flex flex-column">
+  <h3>Welcome to our Wine List</h3>
+  <p>Browse, search and find the wine you're looking for</p>
+  <%= link_to wines_path do %>
+    <div class="btn btn-outline-primary">
+      Browse all Wines
+    </div>
+  <% end %>
+</div>
