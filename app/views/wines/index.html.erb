@@ -31,15 +31,15 @@
   <h3 class="wine-header">Reds</h3>
   <% @red_wines.each do |wine| %>
   <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal fade" id="<%= wine.friendly_id %>" tabindex="-1" role="dialog" aria-labelledby="<%=wine.friendly_id%>Title" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="m-head modal-header-footer modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">QR Code:</h5>
         </div>
-        <div class="share-modal-body modal-body" style="text-align:justify;">
+        <div class="modal-body">
           <% qr_code = RQRCode::QRCode.new(request.original_url + "/" + wine.friendly_id) %>
-          <% svg = qr_code.as_svg( shape_rendering: 'crispEdges', standalone: true ) %>
+          <% svg = qr_code.as_svg( shape_rendering: 'crispEdges', standalone: true, module_size: 6 ) %>
           <%= svg.html_safe %>
         </div>
         <div class="m-foot modal-header-footer modal-footer">
@@ -68,7 +68,7 @@
                   <i class="far fa-edit"></i>
                 </div>
               <% end %>
-              <a href = "#" data-toggle="modal" data-target="#exampleModalCenter">
+              <a href = "#" data-toggle="modal" data-target="#<%= wine.friendly_id %>">
                 <div class="btn btn-outline-primary">
                   <i class="fas fa-qrcode"></i>
                 </div>

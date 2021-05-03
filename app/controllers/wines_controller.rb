@@ -14,10 +14,7 @@ class WinesController < ApplicationController
   def show
     @wine = Wine.friendly.find(params[:id])
     @qr_code = RQRCode::QRCode.new(request.original_url)
-    @svg = @qr_code.as_svg(
-      shape_rendering: 'crispEdges',
-      standalone: true
-    )
+    @svg = @qr_code.as_svg( shape_rendering: 'crispEdges', standalone: true, module_size: 6 )
   end
 
   def new
