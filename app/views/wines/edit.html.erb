@@ -4,7 +4,10 @@
 <div class="container">
   <%= simple_form_for(@wine) do |f| %>
     <div class="half-container d-flex justify-content-between">
-      <%= f.input :name, label: 'Wine Name' %>
+      <div class="wine_name form-group select form-group-valid">
+        <label class="select" for="name" >Name:</label>
+        <input class="form-control is-valid string" type="text" placeholder="<%= @wine.name %>" id="name" readonly>
+      </div>
       <%= f.input :wine_type, as: :select, collection: ["Red", "White", "Rose", "Sparkling", "Champagne", "Prosecco"], prompt: 'Select Type',label: 'Wine Type' %>
     </div>
     <div class="half-container d-flex justify-content-between">
