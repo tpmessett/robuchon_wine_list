@@ -7,11 +7,21 @@
       </div>
     <% end %>
   <% else %>
-    <%= link_to "/" do %>
-      <div class="btn btn-outline-primary">
-        Search
-      </div>
-    <% end %>
+    <div class="d-flex">
+      <form>
+        <select class="form-control select" id="select-wine" name="Wines">
+          <option value="red">Red</option>
+          <option value="white">White</option>
+          <option value="rose">Rose</option>
+          <option value="champagne">Champagne</option>
+          <option value="prosecco">Prosecco</option>
+          <option value="sparkling">Other Sparkling</option>
+        </select>
+      </form>
+        <div id="type-search" class="btn btn-outline-primary">
+          Search
+        </div>
+    </div>
   <% end %>
 </div>
 

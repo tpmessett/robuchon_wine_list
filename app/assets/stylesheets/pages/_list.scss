@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .wine-header {
   color: $gold;
   border-bottom: 3px solid $gold;
@@ -16,4 +20,8 @@
 
 .wine-links {
   margin-bottom: 16px;
+}
+
+#type-search {
+  margin-left: 8px;
 }
