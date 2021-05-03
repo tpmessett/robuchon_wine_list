@@ -18,7 +18,6 @@ class WinesController < ApplicationController
       shape_rendering: 'crispEdges',
       standalone: true
     )
-
   end
 
   def new

@@ -30,6 +30,24 @@
 <% if @red_wines.length > 0 %>
   <h3 class="wine-header">Reds</h3>
   <% @red_wines.each do |wine| %>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="m-head modal-header-footer modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">QR Code:</h5>
+        </div>
+        <div class="share-modal-body modal-body" style="text-align:justify;">
+          <% qr_code = RQRCode::QRCode.new(request.original_url + "/" + wine.friendly_id) %>
+          <% svg = qr_code.as_svg( shape_rendering: 'crispEdges', standalone: true ) %>
+          <%= svg.html_safe %>
+        </div>
+        <div class="m-foot modal-header-footer modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       </div>
+      </div>
+    </div>
+  </div>
     <% if wine.wine_type.downcase == "red" %>
       <div class="wine-summary">
         <div class="d-flex justify-content-between">
@@ -50,8 +68,13 @@
                   <i class="far fa-edit"></i>
                 </div>
               <% end %>
-              <%= link_to wine_path(wine.id), method: :delete do %>
+              <a href = "#" data-toggle="modal" data-target="#exampleModalCenter">
                 <div class="btn btn-outline-primary">
+                  <i class="fas fa-qrcode"></i>
+                </div>
+              </a>
+              <%= link_to wine_path(wine.id), method: :delete do %>
+                <div class="red btn btn-outline-primary">
                   <i class="far fa-trash-alt"></i>
                 </div>
               <% end %>
@@ -61,6 +84,7 @@
     <% end %>
   <% end %>
 <% end %>
+
 <div id="white"></div>
 <% if @white_wines.length > 0 %>
   <h3 class="wine-header">Whites</h3>

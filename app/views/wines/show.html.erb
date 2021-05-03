@@ -1,1 +1,119 @@
-<%= @svg.html_safe %>
+<div class="header view-header d-flex flex-column">
+  <h3><%= @wine.name%></h3>
+  <h5><%= @wine.vineyard%> - <%= @wine.region %> - <%= @wine.wine_type %>
+  <% if user_signed_in? %>
+    <div class="logged-in-links d-flex">
+      <a href = "#" data-toggle="modal" data-target="#exampleModalCenter">
+        <div class="edit-btn btn btn-outline-primary">
+          Show QR code
+        </div>
+      </a>
+      <%= link_to edit_wine_path(@wine.id) do %>
+        <div class="edit-btn btn btn-outline-primary">
+          edit wine
+        </div>
+      <% end %>
+      <%= link_to wine_path(@wine.id), method: :delete do %>
+        <div class="red edit-btn btn btn-outline-primary">
+          delete wine
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="m-head modal-header-footer modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">QR Code:</h5>
+        </div>
+        <div class="share-modal-body modal-body" style="text-align:justify;">
+          <%= @svg.html_safe %>
+        </div>
+        <div class="m-foot modal-header-footer modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       </div>
+      </div>
+    </div>
+  </div>
+
+<div class=container>
+  <div class="description">
+    <p><b>Price: £<%= number_with_precision(@wine.price, precision: 2) %> </b></p>
+    <hr>
+    <p><%= @wine.description %></p>
+    <% if @wine.serving_temperature? %>
+    <hr>
+    <p>Serving Temperature: <%= @wine.serving_temperature %>.</p>
+    <% end %>
+    <% if @wine.guard? %>
+    <hr>
+    <p>Guard: <%= @wine.guard %>.</p>
+    <% end %>
+    <% if @wine.weight? %>
+    <hr>
+    <p>Weight: <%= @wine.weight %>.</p>
+    <% end %>
+    <% if @wine.organic? %>
+    <hr>
+    <p><%= @wine.name %> is <b>Organic</b>.</p>
+    <% end %>
+    <% if @wine.biodynamic? %>
+    <hr>
+    <p><%= @wine.name %> is <b>Biodynamic</b>.<p>
+    <% end %>
+  </div>
+  <% if @wine.product_information[0].length != 0 %>
+    <hr class="break">
+    <div class="description">
+      <H5>Product Information:</H5>
+      <hr>
+      <% @wine.product_information.each do |i| %>
+        <p><%= i %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <% if @wine.tasting_notes[0].length != 0 %>
+    <hr class="break">
+    <div class="description">
+      <H5>Tasting Notes:</H5>
+      <hr>
+      <% @wine.tasting_notes.each do |i| %>
+        <p><%= i %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <% if @wine.food_pairings[0].length != 0 %>
+    <hr class="break">
+    <div class="description">
+      <H5>Food Pairings:</H5>
+      <hr>
+      <% @wine.food_pairings.each do |i| %>
+        <p><%= i %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <% if @wine.allergens[0].length != 0 %>
+    <hr class="break">
+    <div class="description">
+      <H5>Allergens:</H5>
+      <hr>
+      <% @wine.allergens.each do |i| %>
+        <p><%= i %></p>
+      <% end %>
+    </div>
+  <% else %>
+    <hr class="break">
+    <div class="description">
+      <H5>Allergens:</H5>
+      <hr>
+      <p>This product does not contain any known allergens.</p>
+  <% end %>
+</div>
+
+
+
+
+

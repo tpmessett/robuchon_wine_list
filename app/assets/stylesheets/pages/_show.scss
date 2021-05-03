@@ -1,0 +1,35 @@
+.description {
+  text-align: center;
+  h5 {
+    color: $gold
+  }
+}
+
+hr {
+  max-width: 100px;
+}
+.break {
+  margin: 32px auto;
+  border-top: 2px solid $gold
+}
+
+.edit-btn {
+  margin: 8px;
+}
+
+.red {
+  color: red !important;
+  border-color: red !important;
+}
+
+.red:hover {
+  color: $gray !important;
+  background-color: red;
+}
+
+.logged-in-links {
+  a {
+  text-decoration: none;
+}
+}
+
