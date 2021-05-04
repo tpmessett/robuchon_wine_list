@@ -100,26 +100,29 @@
   margin-top: 24px;
 }
 
-@media (max-width: 568px) {
- #keyword-container {
-  width: 85%;
- }
-
- #advanced-search {
-  margin-top: 32px;
-}
-}
 
 @media (max-width: 768px) {
-  .main-form {
+  .main-form, .elements {
     width: 85%;
   }
+
   .search-form {
     max-width: 100%;
     padding-left: 8px;
     padding-right: 8px;
     border-radius: 0px;
   }
+
+@media (max-width: 568px) {
+ #keyword-container {
+  width: 90%;
+ }
+
+ #advanced-search {
+  margin-top: 8px;
+}
+}
+
 }
 
 

@@ -26,9 +26,9 @@ const marginControl = () => {
   basicSearch.style.display = "none"
   search.style.display = "flex"
   if (width < 400) {
-    indexHeader.style.marginBottom = "240px"
+    indexHeader.style.marginBottom = "250px"
   } else if (width > 400 && width < 568) {
-    indexHeader.style.marginBottom = "200px"
+    indexHeader.style.marginBottom = "220px"
   }
   else {
   indexHeader.style.marginBottom = "80px"
@@ -49,8 +49,10 @@ const paramInsert = () => {
 
   minPrice.value += minPriceParam
   maxPrice.value += maxPriceParam
-  keyword.value += keywordParam
   type.value += typeParam
+  if (keywordParam != '') {
+    keyword.value += keywordParam
+  }
 }
 
 export { advancedSearch };
