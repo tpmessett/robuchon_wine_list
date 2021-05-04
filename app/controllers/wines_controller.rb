@@ -3,8 +3,9 @@ class WinesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    if params[:type].present?
-      @wines = Wine.where("wine_type ILIKE ?", "%#{params[:type]}%")
+    if params[:Wines].present?
+      @wines = Wine.where(wine_type: params[:Wines])
+
     else
       @wines = Wine.all
     end
@@ -14,6 +15,15 @@ class WinesController < ApplicationController
     @rose = @wines.select {|wine| wine[:wine_type].downcase == "rose"}
     @prosecco = @wines.select {|wine| wine[:wine_type].downcase == "prosecco"}
     @sparkling = @wines.select {|wine| wine[:wine_type].downcase == "sparkling"}
+
+    wine_listings = Wine.all
+
+    @white_list = wine_listings.select {|wine| wine[:wine_type].downcase == "white"}
+    @red_list = wine_listings.select {|wine| wine[:wine_type].downcase == "red"}
+    @champagne_list = wine_listings.select {|wine| wine[:wine_type].downcase == "champagne"}
+    @rose_list = wine_listings.select {|wine| wine[:wine_type].downcase == "rose"}
+    @prosecco_list = wine_listings.select {|wine| wine[:wine_type].downcase == "prosecco"}
+    @sparkling_list = wine_listings.select {|wine| wine[:wine_type].downcase == "sparkling"}
   end
 
   def show

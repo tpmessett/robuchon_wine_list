@@ -8,33 +8,37 @@
       </div>
     <% end %>
   <% else %>
+  <form>
     <div class="d-flex">
-      <form>
+      <div>
         <select class="form-control select" id="select-wine" name="Wines">
-        <% if @red_wines.length > 0 %>
+        <% if @red_list.length > 0 %>
           <option value="Red">Red</option>
         <% end %>
-        <% if @white_wines.length > 0 %>
+        <% if @white_list.length > 0 %>
           <option value="White">White</option>
         <% end %>
-        <% if @rose.length > 0 %>
+        <% if @rose_list.length > 0 %>
           <option value="Rose">Rose</option>
         <% end %>
-        <% if @champagne.length > 0 %>
+        <% if @champagne_list.length > 0 %>
           <option value="Champagne">Champagne</option>
         <% end %>
-        <% if @prosecco.length > 0 %>
+        <% if @prosecco_list.length > 0 %>
           <option value="Prosecco">Prosecco</option>
         <% end %>
-        <% if @sparkling.length > 0 %>
+        <% if @sparkling_list.length > 0 %>
           <option value="Sparkling">Other Sparkling</option>
         <% end %>
         </select>
-      </form>
-        <div id="type-search" class="btn btn-outline-primary">
+      </div>
+      <div>
+        <button type="submit" id="type-search" class="btn btn-outline-primary">
           Search
-        </div>
+        </button>
+      </div>
     </div>
+  </form>
   <% end %>
 </div>
 
