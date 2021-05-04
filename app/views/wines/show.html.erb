@@ -46,9 +46,11 @@
 
 <div class=container>
   <div class="description">
-    <p><b>Price: £<%= number_with_precision(@wine.price, precision: 2) %> </b></p>
+    <p id="price"><b>Price: £<%= number_with_precision(@wine.price, precision: 2) %> </b></p>
+    <% if @wine.description? %>
     <hr>
     <p><%= @wine.description %></p>
+    <% end %>
     <% if @wine.serving_temperature? %>
     <hr>
     <p>Serving Temperature: <%= @wine.serving_temperature %>.</p>
