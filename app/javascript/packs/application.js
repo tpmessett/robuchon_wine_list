@@ -31,6 +31,7 @@ import { duplicateFoodPairingsInfo } from '../components/duplicateFields';
 import { tastingNotesInfo } from '../components/duplicateFields';
 import { allergensInfo } from '../components/duplicateFields';
 import { photoPosition } from '../components/photoPosition';
+import { advancedSearch } from '../components/advancedSearch';
 
 document.addEventListener('turbolinks:load', () => {
   if (document.getElementById("food-pairings-info-button")) {
@@ -43,5 +44,10 @@ document.addEventListener('turbolinks:load', () => {
   if (document.getElementById("wine-picture")) {
     photoPosition()
   }
+
+  if (document.getElementById("basic-search")) {
+    advancedSearch()
+  }
+
 });
 

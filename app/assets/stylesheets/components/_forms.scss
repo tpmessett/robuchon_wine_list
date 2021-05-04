@@ -64,7 +64,6 @@
 }
 
 .search-form {
-  display: flex;
   justify-content: center;
   margin: 0 auto;
   max-width: 80%;
@@ -74,29 +73,41 @@
   position: absolute;
   top: 340px;
   border-radius: 50px;
+  display: none;
 }
 
 .col-auto {
   padding: 0 6px;
 }
 
-#type-search {
-  margin-left: 0 !important;
+#show-search {
+  margin-left: 8px;
 }
 
-// Smallest device
-@media (min-width: 100px) and (max-width: 992px) {
-  .search-form {
-    max-width: 100%;
-    padding-left: 8px;
-    padding-right: 8px;
-    border-radius: 0px;
-  }
+#advanced-search {
+  margin-left: 0 !important;
+  margin-top: 24px;
+}
+
+@media (max-width: 568px) {
+ #keyword-container {
+  width: 85%;
+ }
+
+ #advanced-search {
+  margin-top: 32px;
+}
 }
 
 @media (max-width: 768px) {
   .main-form {
     width: 85%;
+  }
+  .search-form {
+    max-width: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 0px;
   }
 }
 
