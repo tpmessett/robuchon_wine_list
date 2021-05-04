@@ -4,7 +4,17 @@
     <title>RobouchonWineList</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="description" content="Browse the Wine List for Le Comptoir Robouchon London.">
+    <meta name="robots" content="noindex" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Le Comptoir Robouchon Wine List">
+    <meta property="og:description" content="Browse the Wine List for Le Comptoir Robouchon London.">
+    <meta property="og:image" content="<%= image_url('Le-Comptoir.jpg') %>">
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="twitter:title" content="Le Comptoir Wine List">
+    <meta property="twitter:description" content="Browse the Wine List for Le Comptoir Robouchon London.">
+    <meta property="twitter:image" content="<%= image_url('Le-Comptoir.jpg') %>">
+    <%= favicon_link_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 

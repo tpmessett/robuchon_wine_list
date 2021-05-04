@@ -51,6 +51,7 @@ class WinesController < ApplicationController
 
   def create
     @wine = Wine.new(wine_params)
+
     if @wine.save
       qr_code = RQRCode::QRCode.new(URI.parse(request.original_url).host + "/wines/" + @wine.friendly_id)
       png = qr_code.as_png(
