@@ -9,8 +9,8 @@
     <% end %>
     <% else %>
     <div id="basic-search">
-      <form class="d-flex">
-        <select class="form-control select" id="select-wine" name="Wines">
+      <form id="basic-form">
+        <select class="form-control select" id="select-wine-two" name="Wines">
             <option value="">Select...</option>
             <% if @red_list.length > 0 %>
               <option value="Red">Red</option>
@@ -71,11 +71,11 @@
     </div>
     <div class="col-auto my-1">
       <label class="mr-sm-2" for="min-price">Min-Price</label>
-      <input class="form-control" type="number" id="min-price" name="min-price" min="1" max="1000" placeholder="0">
+      <input class="form-control" type="number" id="min-price" name="min" min="1" max="1000" placeholder="0">
     </div>
     <div class="col-auto my-1">
       <label class="mr-sm-2" for="max-price">Max-Price</label>
-      <input class="form-control" type="number" id="max-price" name="max-price" min="1" max="1000" placeholder="0">
+      <input class="form-control" type="number" id="max-price" name="max" min="1" max="1000" placeholder="0">
     </div>
     <div id="search-button-div" class="col-auto my-1">
       <button type="submit" id="advanced-search" class="btn btn-outline-primary">

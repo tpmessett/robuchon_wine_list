@@ -76,6 +76,13 @@
   display: none;
 }
 
+#basic-form, #select-wine-two, #type-search {
+  display: inline-block;
+  float: left;
+  max-width: 75%;
+}
+
+
 .col-auto {
   padding: 0 6px;
 }

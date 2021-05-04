@@ -32,6 +32,7 @@ import { tastingNotesInfo } from '../components/duplicateFields';
 import { allergensInfo } from '../components/duplicateFields';
 import { photoPosition } from '../components/photoPosition';
 import { advancedSearch } from '../components/advancedSearch';
+import { searchParams } from '../components/advancedSearch';
 
 document.addEventListener('turbolinks:load', () => {
   if (document.getElementById("food-pairings-info-button")) {
@@ -47,6 +48,10 @@ document.addEventListener('turbolinks:load', () => {
 
   if (document.getElementById("basic-search")) {
     advancedSearch()
+  }
+
+  if (window.location.search) {
+    searchParams()
   }
 
 });

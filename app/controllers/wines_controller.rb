@@ -9,6 +9,21 @@ class WinesController < ApplicationController
     else
       @wines = Wine.all
     end
+
+    if params[:min].present?
+
+      @wines = @wines.where("price > #{params[:min].to_f}")
+
+    end
+
+    if params[:max].present?
+      @wines = @wines = @wines.where("price < #{params[:max].to_f}")
+    end
+
+    if params[:keyword].present?
+      @wines = @wines.search_by_name_vineyard_region_description(params[:keyword])
+    end
+
     @white_wines = @wines.select {|wine| wine[:wine_type].downcase == "white"}
     @red_wines = @wines.select {|wine| wine[:wine_type].downcase == "red"}
     @champagne = @wines.select {|wine| wine[:wine_type].downcase == "champagne"}
