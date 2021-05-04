@@ -3,7 +3,11 @@ class WinesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    @wines = Wine.all
+    if params[:type].present?
+      @wines = Wine.where("wine_type ILIKE ?", "%#{params[:type]}%")
+    else
+      @wines = Wine.all
+    end
     @white_wines = @wines.select {|wine| wine[:wine_type].downcase == "white"}
     @red_wines = @wines.select {|wine| wine[:wine_type].downcase == "red"}
     @champagne = @wines.select {|wine| wine[:wine_type].downcase == "champagne"}
@@ -22,9 +26,7 @@ class WinesController < ApplicationController
 
   def create
     @wine = Wine.new(wine_params)
-
     if @wine.save
-
       qr_code = RQRCode::QRCode.new(URI.parse(request.original_url).host + "/wines/" + @wine.friendly_id)
       png = qr_code.as_png(
         bit_depth: 1,

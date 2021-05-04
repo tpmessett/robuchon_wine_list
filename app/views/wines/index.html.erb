@@ -11,12 +11,24 @@
     <div class="d-flex">
       <form>
         <select class="form-control select" id="select-wine" name="Wines">
-          <option value="red">Red</option>
-          <option value="white">White</option>
-          <option value="rose">Rose</option>
-          <option value="champagne">Champagne</option>
-          <option value="prosecco">Prosecco</option>
-          <option value="sparkling">Other Sparkling</option>
+        <% if @red_wines.length > 0 %>
+          <option value="Red">Red</option>
+        <% end %>
+        <% if @white_wines.length > 0 %>
+          <option value="White">White</option>
+        <% end %>
+        <% if @rose.length > 0 %>
+          <option value="Rose">Rose</option>
+        <% end %>
+        <% if @champagne.length > 0 %>
+          <option value="Champagne">Champagne</option>
+        <% end %>
+        <% if @prosecco.length > 0 %>
+          <option value="Prosecco">Prosecco</option>
+        <% end %>
+        <% if @sparkling.length > 0 %>
+          <option value="Sparkling">Other Sparkling</option>
+        <% end %>
         </select>
       </form>
         <div id="type-search" class="btn btn-outline-primary">
