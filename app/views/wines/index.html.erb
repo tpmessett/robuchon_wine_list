@@ -11,6 +11,7 @@
     <% else %>
     <div id="basic-search">
       <form id="basic-form">
+        <div class="d-flex">
         <select class="form-control select" id="select-wine-two" name="Wines">
             <option value="">Select...</option>
             <% if @red_list.length > 0 %>
@@ -35,6 +36,7 @@
           <button type="submit" id="type-search" class="btn btn-outline-primary">
             <i class="fas fa-search"></i>
           </button>
+        </div>
         </form>
         <button id="show-search" class="btn btn-outline-primary">
             advanced
