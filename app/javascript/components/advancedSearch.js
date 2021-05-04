@@ -8,9 +8,12 @@ const advancedSearch = () => {
   button.addEventListener("click", () => {
     basicSearch.style.display = "none"
     search.style.display = "flex"
-    if (width < 568) {
+    if (width < 400) {
+      indexHeader.style.marginBottom = "240px"
+    } else if (width > 400 && width < 568) {
       indexHeader.style.marginBottom = "200px"
-    } else {
+    }
+    else {
     indexHeader.style.marginBottom = "80px"
   }
   })
