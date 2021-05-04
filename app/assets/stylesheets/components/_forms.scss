@@ -63,6 +63,37 @@
   width: 48%;
 }
 
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 80%;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: absolute;
+  top: 340px;
+  border-radius: 50px;
+}
+
+.col-auto {
+  padding: 0 6px;
+}
+
+#type-search {
+  margin-left: 0 !important;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 992px) {
+  .search-form {
+    max-width: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 0px;
+  }
+}
+
 @media (max-width: 768px) {
   .main-form {
     width: 85%;
