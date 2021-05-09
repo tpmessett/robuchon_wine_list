@@ -8,8 +8,12 @@
       <%= f.input :wine_type, as: :select, collection: ["Red", "White", "Rose", "Sparkling", "Champagne", "Prosecco"], prompt: 'Select Type',label: 'Wine Type' %>
     </div>
     <div class="half-container d-flex justify-content-between">
+      <%= f.input :vintage, label: 'Vintage'%>
       <%= f.input :vineyard, label: 'Vineyard' %>
+    </div>
+    <div class="half-container d-flex justify-content-between">
       <%= f.input :region, label: 'Region'%>
+      <%= f.input :wine_region_map, as: :file %>
     </div>
     <div class="half-container d-flex justify-content-between">
       <%= f.input :serving_temperature, label: 'Serving Temperature'%>
@@ -55,7 +59,6 @@
     <%= f.input :organic %>
     <%= f.input :biodynamic %>
     <%= f.input :photo, as: :file %>
-    <%= f.input :wine_region_map, as: :file %>
     <div class="form-submit btn btn-outline-primary">
       <%= f.button :submit, "Create" %>
     </div>
