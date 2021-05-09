@@ -6,6 +6,7 @@ const duplicateProductInfo = () => {
   button.addEventListener("click", () => {
     let fieldTwo = field.cloneNode(true);
     div.appendChild(fieldTwo)
+    fieldTwo.value='';
   })
 }
 
@@ -17,7 +18,9 @@ const duplicateFoodPairingsInfo = () => {
   button.addEventListener("click", () => {
     let fieldTwo = field.cloneNode(true);
     div.appendChild(fieldTwo)
+    fieldTwo.value='';
   })
+
 }
 
 const tastingNotesInfo = () => {
@@ -28,6 +31,7 @@ const tastingNotesInfo = () => {
   button.addEventListener("click", () => {
     let fieldTwo = field.cloneNode(true);
     div.appendChild(fieldTwo)
+    fieldTwo.value='';
   })
 }
 
@@ -39,8 +43,11 @@ const allergensInfo = () => {
   button.addEventListener("click", () => {
     let fieldTwo = field.cloneNode(true);
     div.appendChild(fieldTwo)
+    fieldTwo.value='';
   })
 }
+
+
 
 export { duplicateProductInfo };
 export { duplicateFoodPairingsInfo };

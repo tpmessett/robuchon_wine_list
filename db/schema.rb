@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_01_133725) do
+ActiveRecord::Schema.define(version: 2021_05_09_205300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 2021_05_01_133725) do
     t.string "allergens", default: [], array: true
     t.string "qr_code"
     t.string "slug"
+    t.string "vintage"
     t.index ["slug"], name: "index_wines_on_slug", unique: true
   end
 
