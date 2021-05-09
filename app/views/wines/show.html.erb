@@ -67,21 +67,13 @@
     <hr>
     <p>Weight: <%= @wine.weight %>.</p>
     <% end %>
-    <% if @wine.organic? && @wine.biodynamic? && @wine.agriculture_bioloique? %>
+    <% if @wine.organic? && @wine.biodynamic? %>
     <hr>
     <div class="d-flex justify-content-center image-container-logos">
       <%= image_tag "organic.jpeg" %>
       <%= image_tag "ab.jpeg" %>
       <%= image_tag "Demeter.png" %>
     </div>
-    <p><%= @wine.name %> is <b>Organic</b> & <b>Biodynamic</b>.</p>
-    <% elsif @wine.organic? && @wine.biodynamic? %>
-    <hr>
-    <div class="d-flex justify-content-center image-container-logos">
-      <%= image_tag "organic.jpeg" %>
-      <%= image_tag "Demeter.png" %>
-    </div>
-
     <p><%= @wine.name %> is <b>Organic</b> & <b>Biodynamic</b>.</p>
     <% elsif @wine.biodynamic? %>
     <hr>
@@ -89,17 +81,11 @@
       <%= image_tag "Demeter.png" %>
     </div>
     <p><%= @wine.name %> is <b>Biodynamic</b>.<p>
-    <% elsif @wine.organic? && @wine.agriculture_bioloique? %>
-    <hr>
-    <div class="d-flex justify-content-center image-container-logos">
-      <%= image_tag "organic.jpeg" %>
-      <%= image_tag "ab.jpeg" %>
-    </div>
-    <p><%= @wine.name %> is <b>Organic</b>.<p>
     <% elsif @wine.organic? %>
     <hr>
     <div class="d-flex justify-content-center image-container-logos">
       <%= image_tag "organic.jpeg" %>
+      <%= image_tag "ab.jpeg" %>
     </div>
     <p><%= @wine.name %> is <b>Organic</b>.<p>
     <% end %>
