@@ -39,9 +39,10 @@
           <h5 class="modal-title" id="exampleModalLongTitle">QR Code:</h5>
         </div>
         <div class="share-modal-body modal-body" style="text-align:center;">
-          <img src="data:image/png;base64,<%= @wine.qr_code %>" />
+          <img src="data:image/png;base64,<%= @wine.qr_code %>"/>
         </div>
         <div class="m-foot modal-header-footer modal-footer">
+          <a href="data:image/png;base64,<%= @wine.qr_code %>" class="btn btn-outline-primary" download>Download</a>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
        </div>
       </div>
