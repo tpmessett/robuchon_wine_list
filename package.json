@@ -11,12 +11,16 @@
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0",
     "minimatch": ">=3.0.5",
-    "terser": ">=5.14.2"
+    "terser": ">=5.14.2",
+    "ansi-regex": ">=6.0.1",
+    "loader-utils": ">=2.0.3"
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^4.2.0",
+    "ansi-regex": ">=6.0.1",
+    "loader-utils": ">=2.0.3",
     "minimatch": ">=3.0.5",
-    "terser": ">=5.14.2"
+    "terser": ">=5.14.2",
+    "webpack-dev-server": "^4.11.1"
   }
 }
